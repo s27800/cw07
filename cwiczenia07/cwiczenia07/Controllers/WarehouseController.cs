@@ -36,7 +36,7 @@ public class WarehouseController : ControllerBase
             return Problem("Order with those parameters is already completed.");
         
         //4
-        _warehouseRepository.UpdateDate();
+        _warehouseRepository.UpdateDate(idOrder);
         
         //5
         return Ok(_warehouseRepository.CreateProductWarehouse(addProduct, idOrder));

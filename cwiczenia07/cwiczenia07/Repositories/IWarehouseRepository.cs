@@ -8,6 +8,6 @@ public interface IWarehouseRepository
     bool DoesWarehouseExist(int id);
     int DoesOrderExist(int id, int amount, string date);
     bool IsOrderCompleted(int id);
-    void UpdateDate();
+    void UpdateDate(int id);
     int CreateProductWarehouse(AddProduct addProduct, int idOrder);
 }

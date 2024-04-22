@@ -1,3 +1,5 @@
+using cwiczenia07.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,8 +8,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<IWarehouseRepository, WarehouseRepository>();
 
 var app = builder.Build();
+
+app.Configuration.GetConnectionString("Default");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
